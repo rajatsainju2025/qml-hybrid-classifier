@@ -6,23 +6,22 @@
 [![CI](https://github.com/rsainju/qml-hybrid-classifier/actions/workflows/ci.yml/badge.svg)](https://github.com/rsainju/qml-hybrid-classifier/actions)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
-> **Hybrid quantum-classical classifier using parameterised quantum circuits (PQC)
-> with Bayesian-optimised circuit architecture search.**
+> **Hybrid quantum-classical classifier using parameterized quantum circuits (PQC)
+> with Bayesian-optimized circuit architecture search.**
 
 ---
 
 ## Motivation
 
 Variational quantum algorithms (VQAs) represent a leading candidate for near-term
-quantum advantage, combining the expressibility of parameterised quantum circuits
-with classical gradient-based optimisation [Cerezo et al., 2021; arXiv:2012.09265].
+quantum advantage, combining the expressibility of parameterized quantum circuits
+with classical gradient-based optimization [Cerezo et al., 2021; arXiv:2012.09265].
 For classification tasks, hybrid quantum-classical models have been shown to achieve
-competitive accuracy on structured datasets while using exponentially fewer parameters
+competitive accuracy on structured datasets while using fewer parameters exponentially
 than classical neural networks in certain regimes [Biamonte et al., 2017;
 arXiv:1611.09347]. This project implements a rigorous benchmark of VQC variants
 against classical baselines on the Wisconsin Breast Cancer dataset, with circuit
-architecture search framed as a Bayesian optimisation problem — a natural extension
-of the candidate's existing multi-objective BO work at Argonne National Laboratory.
+architecture search framed as a Bayesian optimization problem.
 
 **Key references:**
 - Cerezo, M. et al. (2021). *Variational quantum algorithms.* Nature Reviews Physics 3, 625–644. [arXiv:2012.09265](https://arxiv.org/abs/2012.09265)
@@ -111,19 +110,6 @@ Classifier comparison uses **McNemar's test** on matched per-sample predictions
 same test set. Multi-model comparisons use Bonferroni correction. The null hypothesis
 is that the two classifiers have identical error rates. Reported p-values are
 two-sided; significance threshold α = 0.05.
-
----
-
-## Connection to Prior Work
-
-This project extends Dr. Sainju's anomaly detection and Bayesian optimisation research
-at Argonne National Laboratory. The variational circuit training objective (minimising
-cross-entropy over PQC parameter space) is structurally identical to the acquisition
-function optimisation in multi-objective Bayesian optimisation — both search a
-non-convex landscape via gradient or surrogate methods. The circuit architecture
-search (n_qubits, n_layers, ansatz) directly mirrors the hyperparameter optimisation
-pipelines developed for DefectSegNet and the APS accelerator anomaly detection
-pipelines, adapted here to a discrete quantum circuit search space.
 
 ---
 
