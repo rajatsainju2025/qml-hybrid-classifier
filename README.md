@@ -93,27 +93,14 @@ Results are saved to `results/tables/` and `results/figures/`.
 
 ## Experiments
 
-### Main Results — Breast Cancer (569 samples, 30 features, binary)
+Results will be populated after running the full experiment suite:
 
-| Model | Ansatz | Embedding | n_qubits | n_layers | # Params | Accuracy | F1 (macro) | ROC-AUC |
-|-------|--------|-----------|----------|----------|----------|----------|------------|---------|
-| VQC (ours) | StronglyEntangling | Angle | 8 | 3 | 104 | 0.921 ± 0.008 | 0.917 ± 0.009 | 0.963 ± 0.006 |
-| VQC (ours) | BasicEntangling | Angle | 8 | 3 | 32 | 0.903 ± 0.011 | 0.898 ± 0.013 | 0.951 ± 0.008 |
-| SVM (RBF) | — | — | — | — | — | 0.974 ± 0.005 | 0.973 ± 0.005 | 0.997 ± 0.001 |
-| Logistic Regression | — | — | — | — | — | 0.957 ± 0.006 | 0.955 ± 0.007 | 0.993 ± 0.002 |
-| MLP (32-16) | — | — | — | — | 578 | 0.968 ± 0.007 | 0.967 ± 0.007 | 0.996 ± 0.002 |
+```bash
+python experiments/run_experiment.py --config experiments/configs/baseline_vqc.yaml
+python experiments/run_ablation.py --config experiments/configs/ablation_depth.yaml
+```
 
-All results: mean ± std over 5 random seeds (seeds 42, 43, 44, 45, 46). Statistical comparison via McNemar's test with Bonferroni correction (α = 0.05 / 4 comparisons = 0.0125). VQC results use `default.qubit` noiseless simulator; classical baselines use scikit-learn defaults with identical stratified splits. As expected for a NISQ-era simulator on a structured tabular dataset, the VQC does not outperform classical baselines — this is not a limitation of the method but an honest property of current parameterised circuit depth vs. the information-rich 30-feature input space.
-
-### Ablation — Circuit Depth vs. Accuracy (StronglyEntanglingLayers, AngleEmbedding, n_qubits=8)
-
-| n_layers | # Params | Val Accuracy | Meyer-Wallach | Train Time (s) |
-|----------|----------|--------------|---------------|----------------|
-| 1 | 24 | 0.874 ± 0.014 | 0.43 | 312 |
-| 2 | 48 | 0.903 ± 0.011 | 0.61 | 576 |
-| 3 | 72 | 0.921 ± 0.008 | 0.71 | 843 |
-| 4 | 96 | 0.918 ± 0.010 | 0.76 | 1,107 |
-| 5 | 120 | 0.912 ± 0.012 | 0.79 | 1,374 |
+Output tables are saved to `results/tables/` and figures to `results/figures/`.
 
 ---
 
