@@ -44,22 +44,22 @@ Classical input (30 features)
          │
          ▼
 ┌─────────────────────────────────────────────────────────┐
-│              Quantum Circuit Layer (QNode)               │
+│              Quantum Circuit Layer (QNode)              │
 │                                                         │
-│  ┌───────────────────────────────────────┐             │
+│  ┌───────────────────────────────────────┐              │
 │  │  Data Embedding                        │             │
-│  │  AngleEmbedding (Rx)  or              │             │
-│  │  AmplitudeEmbedding                   │             │
-│  └───────────────────────────────────────┘             │
+│  │  AngleEmbedding (Rx)  or              │              │
+│  │  AmplitudeEmbedding                   │              │
+│  └───────────────────────────────────────┘              │
 │                      │                                  │
 │                      ▼                                  │
-│  ┌───────────────────────────────────────┐             │
+│  ┌───────────────────────────────────────┐              │
 │  │  Variational Ansatz (L layers)         │             │
 │  │  StronglyEntanglingLayers  or          │             │
 │  │  BasicEntanglingLayers                 │             │
-│  └───────────────────────────────────────┘             │
+│  └───────────────────────────────────────┘              │
 │                      │                                  │
-│          ⟨Z₀⟩  ⟨Z₁⟩  …  ⟨Zₙ⟩  (expectation values)   │
+│          ⟨Z₀⟩  ⟨Z₁⟩  …  ⟨Zₙ⟩  (expectation values)      │ 
 └─────────────────────────────────────────────────────────┘
          │
          ▼
