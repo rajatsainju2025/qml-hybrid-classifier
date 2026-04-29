@@ -1,0 +1,33 @@
+# Main experiment: VQC vs classical baselines on breast_cancer
+experiment_name: qml-hybrid-classifier
+run_name: baseline-strongly-entangling
+
+# Dataset
+dataset: breast_cancer
+val_size: 0.15
+test_size: 0.15
+
+# Quantum circuit architecture
+n_qubits: 8
+n_layers: 3
+ansatz: strongly_entangling     # or: basic_entangling
+embedding: angle                 # or: amplitude
+
+# Training hyperparameters
+lr: 0.01
+batch_size: 32
+max_epochs: 150
+patience: 25
+
+# Reproducibility
+seed: 42
+n_classes: 2
+
+# Classical baselines to compare against
+baseline_models:
+  - svm
+  - logistic_regression
+  - mlp
+
+# Output paths
+results_dir: results

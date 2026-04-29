@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Sainju"
+    given-names: "Rajat"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Argonne National Laboratory"
+title: >-
+  qml-hybrid-classifier: Hybrid Quantum-Classical Variational Circuit
+  Classifier with Bayesian Architecture Search
+version: 0.1.0
+date-released: "2024-01-01"
+url: "https://github.com/rsainju/qml-hybrid-classifier"
+license: MIT
+keywords:
+  - quantum machine learning
+  - variational quantum circuits
+  - PennyLane
+  - hybrid quantum-classical
+  - Bayesian optimisation
+references:
+  - type: article
+    authors:
+      - family-names: "Cerezo"
+        given-names: "M."
+    title: "Variational quantum algorithms"
+    journal: "Nature Reviews Physics"
+    volume: 3
+    year: 2021
+    doi: "10.1038/s42254-021-00348-9"
+  - type: article
+    authors:
+      - family-names: "Biamonte"
+        given-names: "Jacob"
+    title: "Quantum machine learning"
+    journal: "Nature"
+    volume: 549
+    year: 2017
+    doi: "10.1038/nature23474"

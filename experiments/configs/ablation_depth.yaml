@@ -1,0 +1,31 @@
+# Ablation study: circuit depth (n_layers) vs accuracy
+# Sweeps n_layers from 1 to 5 with StronglyEntanglingLayers
+experiment_name: qml-hybrid-classifier-ablation
+run_name: ablation-depth
+
+# Dataset
+dataset: breast_cancer
+val_size: 0.15
+test_size: 0.15
+
+# Fixed architecture parameters
+n_qubits: 8
+ansatz: strongly_entangling
+embedding: angle
+
+# Ablation sweep values (iterated by run_ablation.py)
+ablation_param: n_layers
+ablation_values: [1, 2, 3, 4, 5]
+
+# Training hyperparameters (fixed across ablation)
+lr: 0.01
+batch_size: 32
+max_epochs: 150
+patience: 25
+
+# Reproducibility
+seed: 42
+n_classes: 2
+
+# Output paths
+results_dir: results
